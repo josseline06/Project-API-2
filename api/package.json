@@ -1,0 +1,19 @@
+{
+  "name": "wonderlist",
+  "version": "1.0.0",
+  "description": "TODO list",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://josseline06@bitbucket.org/josseline06/wonderlist.git"
+  },
+  "author": "Josseline Perdomo",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/josseline06/wonderlist#readme",
+  "dependencies": {
+    "express": "^4.13.1"
+  }
+}
