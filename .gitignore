@@ -27,13 +27,8 @@ build/Release
 
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
-node_modules/bcrypt
-node_modules/body-parser
-node_modules/express
-node_modules/method-override
-node_modules/sails-disk
-node_modules/sails-postgresql
-node_modules/waterline
+node_modules
+!node_modules/dir.js
 
 ### Bower ###
 bower_components
