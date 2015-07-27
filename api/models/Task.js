@@ -1,22 +1,34 @@
 var Waterline = require('waterline');
 
 module.exports = Waterline.Collection.extend({
-	identity : 'task',
+	tableName: 'app_task',
 	connection: 'local-postgresql',
 	attributes: {
-		// identifica al usuario
 		description:{ 
 			type: 'string',
 			required: true
 		},
 		target_date:{
-			type: 'date',
+			type: 'datetime',
 			required: true
 		},
 		is_done: {
-			type: 'bolean',
+			type: 'boolean',
 			required: true,
 			defaultsTo: false
+		},
+		priority: {
+			type: 'string',
+			enum: ['normal', 'urgent'],
+			defaultsTo: 'normal'
+		},
+		owner: {
+			model: 'app_user', 
+			columnName: 'owner_id'
+		},
+		category: {
+			model: 'app_category',
+			columnName: 'category_id'
 		}
 	}
 });

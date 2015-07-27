@@ -1,7 +1,9 @@
-var Waterline = require('waterline');
+var Waterline = require('waterline'),
+	dir = require('dir'),
+	helpers = require(dir.helpers);
 
 module.exports = Waterline.Collection.extend({
-	identity : 'user',
+	tableName: 'app_user',
 	connection: 'local-postgresql',
 	attributes: {
 		// identifica al usuario
@@ -25,21 +27,27 @@ module.exports = Waterline.Collection.extend({
 		password: {
 			type: 'string',
 			required: true
+		},
+		city:{
+			type: 'string',
+			minLength: 2,
+			maxLength: 30
+		},
+		country:{
+			type: 'string',
+			required: true,
+			minLength: 2,
+			maxLength: 30,
+			defaultsTo: 'citzen of the world'
+		},
+		tasks: {
+			collection: 'app_task',
+			via: 'owner'
+		},
+		session: {
+			model: 'app_session'
 		}
 	},
-	// Encripta el password
-	beforeCreate: function(values, next){
-		var bcrypt = require('bcrypt');
-
-		bcrypt.genSalt(10, function(err, salt){
-			if(err) return next(err);
-
-			bcrypt.hash(values.password, salt, function(err, hash){
-				if(err) return next(err);
-
-				values.password = hash;
-				next();
-			});
-		});
-	}
+	beforeCreate: helpers.encrypted_password,
+	beforeUpdate: helpers.encrypted_password
 });

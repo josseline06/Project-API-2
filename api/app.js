@@ -1,11 +1,11 @@
-var express = require('express');
-var app = express();
-var orm = require('./orm/config.js')
+var dir = require('dir'), 
+	express = require('express'), 
+	app = express(), 
+	orm = require(dir.orm)
 
 var port = process.env.PORT || 8080; // port where app will be runing
 
-orm.initialize(app, port, function(collections, connections) {  
-    // store the collections and connections retrieved to the app instance
+orm.initialize(app, port, function(collections, connections){  
     app.models = collections; 
     app.connections = connections;
 
