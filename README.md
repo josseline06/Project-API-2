@@ -5,7 +5,7 @@ El API se encuentra desarrollado en NodeJS con el framework ExpressJS y el ORM e
 
 ### Base de Datos
 
-Este api está desarrollado para utilizar PostgreSQL, al ejecutar el API usa una base de datos llamada 'wonderlist' en el puerto 8080 (puerto por defecto de mongoDB). Puede encontrarse mas informacion en el archivo connections.js.
+Este api está desarrollado para utilizar PostgreSQL, al ejecutar el API usa una base de datos llamada 'wonderlist' en el puerto 8080. Puede encontrarse mas informacion en el archivo connections.js.
 
 ### Build and Run
 
@@ -25,7 +25,6 @@ E ir a [localhost:8080/api](http://localhost:8080/api).
  
 La documentación puede ser encontrada en [localhost:8080/api/docs](http://localhost:8080/api/docs).
 
-***
 ---
 
 ##Front End
