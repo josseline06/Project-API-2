@@ -1,22 +1,30 @@
 var Waterline = require('waterline');
 
 module.exports = Waterline.Collection.extend({
-	identity = 'task',
+	identity : 'user',
 	connection: 'local-postgresql',
 	attributes: {
 		// identifica al usuario
-		description:{ 
+		email:{ 
+			type: 'email',
+			required: true,
+			unique: true
+		},
+		name:{
+			type: 'string',
+			required: true,
+			minLength: 2,
+			maxLength: 30
+		},
+		last_name:{
+			type: 'string',
+			required: true,
+			minLength: 2,
+			maxLength: 30
+		},
+		password: {
 			type: 'string',
 			required: true
-		},
-		target_date:{
-			type: 'date',
-			required: true
-		},
-		is_done: {
-			type: 'bolean',
-			required: true,
-			defaultsTo: false
 		}
 	},
 	// Encripta el password

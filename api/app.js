@@ -1,13 +1,15 @@
 var express = require('express');
 var app = express();
+var orm = require('./orm/config.js')
 
-app.get('/', function (request, response) {
-	response.send('Hello World!');
-});
+var port = process.env.PORT || 8080; // port where app will be runing
 
-var server = app.listen(8080, function() {
-	var host = server.address().address;
-	var port = server.address().port;
+orm.initialize(app, port, function(collections, connections) {  
+    // store the collections and connections retrieved to the app instance
+    app.models = collections; 
+    app.connections = connections;
 
-	console.log('Example app listening at http://%s:%s', host, port);
+    var server = app.listen(port, function() {
+      console.log('El servidor esta corriendo en el puerto ' + server.address().port);
+    });
 });

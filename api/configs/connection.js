@@ -11,7 +11,7 @@ module.exports  = {
 		'local-postgresql': {
 			adapter: 'postgres',
 			host: 'localhost',
-			port: '8080',
+			port: '5432',
 			database: 'wonderlist',
 			user: 'postgres',
 			password: 'postgres',
