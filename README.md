@@ -27,7 +27,7 @@ La documentación puede ser encontrada en [localhost:8080/api/docs](http://local
 
 ---
 
-##Front End
+## Front End
 El Front End se encuentra desarrollado como una SPA siguiendo el patron MVC utilizando el framework AngularJS.
 
 Primero, instalar dependencias usando bower:
