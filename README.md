@@ -1,6 +1,6 @@
 # Wonderlist - APP
 
-##API
+## API
 El API se encuentra desarrollado en NodeJS con el framework ExpressJS y el ORM es Waterline.
 
 ### Base de Datos
